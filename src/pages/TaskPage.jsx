@@ -20,7 +20,6 @@ function TaskPage() {
           </button>
           <Title>Task Details</Title>
         </div>
-
         <div className="bg-slate-200 p-4 rounded-md shadow">
           <h2 className="text-xl font-bold text-slate-600">{title}</h2>
           <p className="text-slate-600">{description}</p>
