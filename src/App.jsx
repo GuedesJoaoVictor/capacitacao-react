@@ -45,6 +45,12 @@ export default function App() {
     setTasks(newTasks);
   };
 
+  const onClickDeleteTask = (taskId) => {
+    // Filtrar todas as tarefas que não tem o id igual ao taskId
+    const newTasks = tasks.filter((task) => task.id !== taskId);
+    setTasks(newTasks);
+  };
+
   return (
     <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
       <div className="w-[500px]">
@@ -52,7 +58,11 @@ export default function App() {
           Gerenciador de Tarefas
         </h1>
         <AddTask />
-        <Tasks tasks={tasks} onTaskClick={onTaskClick} />
+        <Tasks
+          tasks={tasks}
+          onTaskClick={onTaskClick}
+          onClickDeleteTask={onClickDeleteTask}
+        />
       </div>
     </div>
   );
